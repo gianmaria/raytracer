@@ -7,7 +7,7 @@ v3(float x, float y, float z)
 }
 
 inline float 
-squared_length(const vec3 &v)
+squared_length(vec3 v)
 {
     float res = (v.x * v.x + 
                  v.y * v.y + 
@@ -16,7 +16,7 @@ squared_length(const vec3 &v)
 }
 
 inline float 
-length(const vec3 &v)
+length(vec3 v)
 {
     float res = squared_length(v);
     res = sqrtf(res);
@@ -25,7 +25,7 @@ length(const vec3 &v)
 }
 
 inline vec3 
-unit(const vec3 &v)
+unit(vec3 v)
 {
     vec3 res = v;
 
@@ -40,7 +40,7 @@ unit(const vec3 &v)
 }
 
 inline float
-dot(const vec3 &a, const vec3 &b)
+dot(vec3 a, vec3 b)
 {
     float res = a.x * b.x + a.y * b.y + a.z * b.z;
 
@@ -48,7 +48,7 @@ dot(const vec3 &a, const vec3 &b)
 }
 
 inline vec3
-cross(const vec3 &a, const vec3 &b)
+cross(vec3 a, vec3 b)
 {
     vec3 res = {};
 
@@ -78,7 +78,7 @@ operator-(vec3 &v)
 
 
 inline vec3 
-operator+(const vec3 &lhs, const vec3 &rhs)
+operator+(vec3 lhs, vec3 rhs)
 {
     vec3 res = {};
 
@@ -90,7 +90,7 @@ operator+(const vec3 &lhs, const vec3 &rhs)
 }
 
 inline vec3 
-operator-(const vec3 &lhs, const vec3 &rhs)
+operator-(vec3 lhs, vec3 rhs)
 {
     vec3 res = {};
 
@@ -102,7 +102,7 @@ operator-(const vec3 &lhs, const vec3 &rhs)
 }
 
 inline vec3 
-operator*(const vec3 &lhs, const vec3 &rhs)
+operator*(vec3 lhs, vec3 rhs)
 {
     vec3 res = {};
 
@@ -114,7 +114,7 @@ operator*(const vec3 &lhs, const vec3 &rhs)
 }
 
 inline vec3 
-operator/(const vec3 &lhs, const vec3 &rhs)
+operator/(vec3 lhs, vec3 rhs)
 {
     assert(rhs.x != 0.0f &&
            rhs.y != 0.0f &&
@@ -131,7 +131,7 @@ operator/(const vec3 &lhs, const vec3 &rhs)
 
 
 inline vec3 
-operator*(const vec3 &v, float n)
+operator*(vec3 v, float n)
 {
     vec3 res = {};
 
@@ -143,7 +143,7 @@ operator*(const vec3 &v, float n)
 }
 
 inline vec3 
-operator*(float n, const vec3 &v)
+operator*(float n, vec3 v)
 {
     vec3 res = v * n;
 
@@ -151,7 +151,7 @@ operator*(float n, const vec3 &v)
 }
 
 inline vec3 
-operator/(const vec3& v, float n)
+operator/(vec3 v, float n)
 {
     assert(n != 0.0f);
 
@@ -165,7 +165,7 @@ operator/(const vec3& v, float n)
 }
 
 inline vec3 
-operator/(float n, const vec3 &v)
+operator/(float n, vec3 v)
 {
     vec3 res = v / n;
 
@@ -174,7 +174,7 @@ operator/(float n, const vec3 &v)
 
 
 inline vec3& 
-operator+=(vec3 &lhs, const vec3 &rhs)
+operator+=(vec3 &lhs, vec3 rhs)
 {
     lhs = lhs + rhs;
 
@@ -182,7 +182,7 @@ operator+=(vec3 &lhs, const vec3 &rhs)
 }
 
 inline vec3& 
-operator-=(vec3 &lhs, const vec3 &rhs)
+operator-=(vec3 &lhs, vec3 rhs)
 {
     lhs = lhs - rhs;
 
@@ -190,7 +190,7 @@ operator-=(vec3 &lhs, const vec3 &rhs)
 }
 
 inline vec3& 
-operator*=(vec3 &lhs, const vec3 &rhs)
+operator*=(vec3 &lhs, vec3 rhs)
 {
     lhs = lhs * rhs;
 
@@ -198,7 +198,7 @@ operator*=(vec3 &lhs, const vec3 &rhs)
 }
 
 inline vec3& 
-operator/=(vec3 &lhs, const vec3 &rhs)
+operator/=(vec3 &lhs, vec3 rhs)
 {
     lhs = lhs / rhs;
 
